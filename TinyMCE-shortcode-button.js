@@ -42,7 +42,7 @@
             onclick: function() {
                 // Open window
                 editor.windowManager.open( {
-                    title: 'Bootstrap Button Shortcode',
+                    title: 'Shortcode 1:1',
                     body: [{
                         type: 'textbox',
                         name: 'col1',
@@ -80,7 +80,7 @@
             onclick: function() {
                 // Open window
                 editor.windowManager.open( {
-                    title: 'Bootstrap Button Shortcode',
+                    title: 'Shortcode 2:1',
                     body: [{
                         type: 'textbox',
                         name: 'col1',
@@ -117,7 +117,7 @@
             onclick: function() {
                 // Open window
                 editor.windowManager.open( {
-                    title: 'Bootstrap Button Shortcode',
+                    title: 'Shortcode 1:2',
                     body: [{
                         type: 'textbox',
                         name: 'col1',
@@ -154,7 +154,7 @@
             onclick: function() {
                 // Open window
                 editor.windowManager.open( {
-                    title: 'Shortcode Plugin',
+                    title: 'Shortcode 1:1:1',
                     body: [{
                         type: 'textbox',
                         name: 'col1',
