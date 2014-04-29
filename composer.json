@@ -101,6 +101,21 @@
 				"composer/installers": "~1.0"
 			}
 		}
+	 },
+	 {
+    	"type": "package",
+		"package": {
+			"name": "zero4281/openweathermap-plugin",
+			"type": "wordpress-plugin",
+			"version": "dev-master",
+			"dist": {
+				"type": "zip",
+				"url": "https://github.com/zero4281/openweathermap-plugin/archive/master.zip"
+			},
+			"require" : {
+				"composer/installers": "~1.0"
+			}
+		}
 	 }
   ],
   "require": {
