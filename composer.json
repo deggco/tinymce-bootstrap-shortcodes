@@ -1,0 +1,128 @@
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
+    },
+    {
+      "type": "git",
+      "url": "gituser@10.0.2.11:/gitrepos/gravityforms.git"
+    },
+    {
+      "type": "git",
+      "url": "gituser@10.0.2.11:/gitrepos/events-manager-pro.git"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wordpress/wordpress",
+        "type": "webroot",
+        "version": "3.9",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/WordPress/WordPress/archive/3.9.zip"
+        },
+        "require" : {
+          "fancyguy/webroot-installer": "1.0.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "devinsays/options-framework-plugin",
+        "type": "wordpress-muplugin",
+        "version": "dev-master",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/devinsays/options-framework-plugin/archive/master.zip"
+        },
+        "require" : {
+          "composer/installers": "~1.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "jaredatch/Custom-Metaboxes-and-Fields-for-WordPress",
+        "type": "wordpress-muplugin",
+        "version": "dev-master",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/archive/master.zip"
+        },
+        "require" : {
+          "composer/installers": "~1.0"
+        }
+      }
+    },
+    {
+    	"type": "package",
+		"package": {
+			"name": "crowdfavorite/wp-post-formats",
+			"type": "wordpress-muplugin",
+			"version": "dev-master",
+			"dist": {
+				"type": "zip",
+				"url": "https://github.com/crowdfavorite/wp-post-formats/archive/master.zip"
+			},
+			"require" : {
+				"composer/installers": "~1.0"
+			}
+		}
+	 },
+    {
+      "type": "package",
+      "package": {
+        "name": "travisscheidegger/wp-brand-deggco",
+        "type": "wordpress-muplugin",
+        "version": "dev-Abrams",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/travisscheidegger/wp-brand-deggco/archive/Abrams.zip"
+        },
+        "require" : {
+          "composer/installers": "~1.0"
+        }
+      }
+    },
+    {
+    	"type": "package",
+		"package": {
+			"name": "zero4281/TinyMCE-shortcode-button",
+			"type": "wordpress-plugin",
+			"version": "dev-master",
+			"dist": {
+				"type": "zip",
+				"url": "https://github.com/zero4281/TinyMCE-shortcode-button/archive/master.zip"
+			},
+			"require" : {
+				"composer/installers": "~1.0"
+			}
+		}
+	 }
+  ],
+  "require": {
+    "wordpress/wordpress": "3.9",
+    "devinsays/options-framework-plugin": "dev-master",
+    "jaredatch/Custom-Metaboxes-and-Fields-for-WordPress": "dev-master",
+    "travisscheidegger/wp-brand-deggco": "dev-Abrams",
+    "wpackagist/wordpress-seo": "1.4.*",
+    "wpackagist/ajax-thumbnail-rebuild": "1.*",
+    "wpackagist/events-manager": "5.5.*",
+    "wpackagist/shadowbox-js": "3.0.3.*",
+    "gravityforms/gravityforms": "dev-master",
+    "crowdfavorite/wp-post-formats": "dev-master",
+    "events-manager-pro/events-manager-pro": "dev-master"
+  },
+  "extra": {
+    "installer-paths": {
+      "app/themes/{$name}/": ["type:wordpress-theme"],
+      "app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "app/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
+    },
+    "webroot-dir": "core",
+    "webroot-package": "wordpress/wordpress"
+  }
+}
