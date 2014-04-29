@@ -1,16 +1,12 @@
 <?php
 /**
- * Plugin Name: TinyMCE Bootstrap Button
+ * Plugin Name: TinyMCE Bootstrap Shortcodes
  * Description: A plugin to add a custom button and shortcode to TinyMCE
- * Plugin URI:  https://github.com/zero4281/TinyMCE-shortcode-button
+ * Plugin URI:  https://github.com/zero4281/tinymce-bootsrap-shortcodes
  * Version:     0.0.1
  * Author:      Joshua Rising
  * Author URI:  https://github.com/zero4281/
- * License:     GPLv2
- * License URI: ./assets/license.txt
- * Text Domain: 
- * Domain Path: /languages
- * Network:     false
+ * License:     MIT
  */
  
 function TMCEBB_shortcode_css() {
@@ -43,14 +39,20 @@ function TMCEBB_shortcode_add_tinymce_plugin( $plugin_array ) {
 // Add the button key for address via JS
 function TMCEBB_shortcode_add_tinymce_button( $buttons ) {
 
-    array_push( $buttons, 'TMCEBB_shortcode_button_key' );
+    array_push( $buttons, 'TMCEBB_URL_shortcode_key' );
+    array_push( $buttons, 'TMCEBB_col_6_shortcode_key' );
+    array_push( $buttons, 'TMCEBB_col_48_shortcode_key' );
+    array_push( $buttons, 'TMCEBB_col_84_shortcode_key' );
+    array_push( $buttons, 'TMCEBB_col_444_shortcode_key' );
     // Print all buttons
     //var_dump( $buttons );
     return $buttons;
 }
-
+/*
+TMCEBB_URL_shortcode_key
+*/
 //function to output shortcode
-function TMCEBB_shortcode_display_tinymce($atts) {
+function TMCEBB_shortcode_display_link($atts) {
 	@extract($atts);
 	$title;
 	$url;
@@ -61,5 +63,27 @@ function TMCEBB_shortcode_display_tinymce($atts) {
 	
 	return $tempLink;
 }
-add_shortcode('button', 'TMCEBB_shortcode_display_tinymce');
+//function to output shortcode
+function TMCEBB_shortcode_display_row($atts, $content = null) {
+	$tempStr = '<div class="row">'.do_shortcode($content).'</div>';
+	return $tempStr;
+}
+function TMCEBB_shortcode_display_col_6($atts, $content = null) {
+	$tempStr = '<div class="col-md-6">'.do_shortcode($content).'</div>';
+	return $tempStr;
+}
+function TMCEBB_shortcode_display_col_8($atts, $content = null) {
+	$tempStr = '<div class="col-md-8">'.do_shortcode($content).'</div>';
+	return $tempStr;
+}
+function TMCEBB_shortcode_display_col_4($atts, $content = null) {
+	$tempStr = '<div class="col-md-4">'.do_shortcode($content).'</div>';
+	return $tempStr;
+}
+
+add_shortcode('button', 'TMCEBB_shortcode_display_link');
+add_shortcode('row', 'TMCEBB_shortcode_display_row');
+add_shortcode('col-6', 'TMCEBB_shortcode_display_col_6');
+add_shortcode('col-8', 'TMCEBB_shortcode_display_col_8');
+add_shortcode('col-4', 'TMCEBB_shortcode_display_col_4');
 ?>
