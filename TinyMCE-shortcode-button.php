@@ -2,7 +2,7 @@
 /**
  * Plugin Name: TinyMCE Bootstrap Button
  * Description: A plugin to add a custom button and shortcode to TinyMCE
- * Plugin URI:  https://github.com/zero4281/
+ * Plugin URI:  https://github.com/zero4281/TinyMCE-shortcode-button
  * Version:     0.0.1
  * Author:      Joshua Rising
  * Author URI:  https://github.com/zero4281/
