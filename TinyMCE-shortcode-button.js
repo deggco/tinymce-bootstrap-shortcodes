@@ -6,12 +6,12 @@
         editor.addButton( 'TMCEBB_shortcode_button_key', {
 
             //text: 'Button',
-            icon: 'dashicons dashicons-cart',
+            icon: 'dashicons icon-link',
             //icon: false,
             onclick: function() {
                 // Open window
                 editor.windowManager.open( {
-                    title: 'Shortcode Plugin',
+                    title: 'Bootstrap Button Shortcode',
                     body: [{
                         type: 'textbox',
                         name: 'title',
