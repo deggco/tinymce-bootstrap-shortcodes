@@ -6,7 +6,8 @@
  * Version:     0.0.1
  * Author:      Joshua Rising
  * Author URI:  https://github.com/zero4281/
- * License:     MIT
+ * License:     GPL3
+ * Copy Right: 2014 Joshua Rising, Rogue Valley Software
  */
  
 function TMCEBB_shortcode_css() {
