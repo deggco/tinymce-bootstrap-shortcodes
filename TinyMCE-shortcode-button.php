@@ -21,7 +21,7 @@ function TMCEBB_shortcode_add_tinymce() {
     global $typenow;
     
     // only on Post Type: post and page
-    if( ! in_array( $typenow, array( 'post', 'page' ) ) )
+    if( ! in_array( $typenow, apply_filters('TMCEBB_post_types', array( 'post', 'page' ) ) ) )
         return ;
 
     add_filter( 'mce_external_plugins', 'TMCEBB_shortcode_add_tinymce_plugin' );
