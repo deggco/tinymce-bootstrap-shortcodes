@@ -16,7 +16,7 @@
       "email": "t@degg.co",
       "homepage": "http://degg.co",
       "role": "Developer"
-    },
+    }
   ],
   "minimum-stability": "dev",
   "require": {
