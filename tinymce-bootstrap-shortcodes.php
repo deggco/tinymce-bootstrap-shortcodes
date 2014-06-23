@@ -57,10 +57,10 @@ function TMCEBS_display_link($atts) {
   @extract($atts);
   $title;
   $url;
-  if(stripos($url, 'http') === FALSE) {
-    $url = 'http://' . $url;
-  }
-  $tempLink = "<a class=\"btn btn-primary\" title=\"$title\" href=\"$url\" target='_blank'>$title</a>";
+  $icon = (isset($icon)) ? "<span class='{$icon}'></span> " : "";
+  $type = (isset($type)) ? $type : 'primary';
+  $size = (isset($size)) ? $size : 'md';
+	$string = sprintf('<a class="btn btn-%s btn-%s" title="%s" href="%s">%s%s</a>', $type, $size, $title, $url, $icon, $title);
 
   return $tempLink;
 }
