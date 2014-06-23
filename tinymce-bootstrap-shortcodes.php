@@ -17,6 +17,7 @@ function TMCEBS_css() {
 add_action('admin_enqueue_scripts', 'TMCEBS_css');
 
 add_action( 'admin_head', 'TMCEBS_add_tinymce' );
+
 function TMCEBS_add_tinymce() {
   global $typenow;
 
@@ -31,9 +32,9 @@ function TMCEBS_add_tinymce() {
 
 // inlcude the js for tinymce
 function TMCEBS_add_tinymce_plugin( $plugin_array ) {
-  $plugin_array['TMCEBS_button'] = plugins_url( '/tinymce-bootstrap-shortcodes.js', __FILE__ );
+  $plugin_array['TMCEBS_shortcodes'] = plugins_url( '/tinymce-bootstrap-shortcodes.js', __FILE__ );
   // Print all plugin js path
-  //var_dump( $plugin_array );
+  //echo '<pre>' . print_r($plugin_array, true) . '</pre>';
   return $plugin_array;
 }
 
@@ -45,8 +46,9 @@ function TMCEBS_add_tinymce_button( $buttons ) {
   array_push( $buttons, 'TMCEBS_col_48_shortcode_key' );
   array_push( $buttons, 'TMCEBS_col_84_shortcode_key' );
   array_push( $buttons, 'TMCEBS_col_444_shortcode_key' );
+  array_push($buttons, 'TMCEBS_clearer');
   // Print all buttons
-  //var_dump( $buttons );
+  //echo '<pre>' . print_r($buttons, true) . '</pre>';
   return $buttons;
 }
 /*
@@ -64,27 +66,39 @@ function TMCEBS_display_link($atts) {
 
   return $tempLink;
 }
+add_shortcode('button', 'TMCEBS_shortcode_display_link');
 //function to output shortcode
 function TMCEBS_shortcode_display_row($atts, $content = null) {
   $tempStr = '<div class="row">'.do_shortcode($content).'</div>';
   return $tempStr;
 }
+add_shortcode('row', 'TMCEBS_shortcode_display_row');
 function TMCEBS_shortcode_display_col_6($atts, $content = null) {
   $tempStr = '<div class="col-md-6">'.do_shortcode($content).'</div>';
   return $tempStr;
 }
+add_shortcode('col-6', 'TMCEBS_shortcode_display_col_6');
 function TMCEBS_shortcode_display_col_8($atts, $content = null) {
   $tempStr = '<div class="col-md-8">'.do_shortcode($content).'</div>';
   return $tempStr;
 }
+add_shortcode('col-8', 'TMCEBS_shortcode_display_col_8');
 function TMCEBS_shortcode_display_col_4($atts, $content = null) {
   $tempStr = '<div class="col-md-4">'.do_shortcode($content).'</div>';
   return $tempStr;
 }
-
-add_shortcode('button', 'TMCEBS_shortcode_display_link');
-add_shortcode('row', 'TMCEBS_shortcode_display_row');
-add_shortcode('col-6', 'TMCEBS_shortcode_display_col_6');
-add_shortcode('col-8', 'TMCEBS_shortcode_display_col_8');
 add_shortcode('col-4', 'TMCEBS_shortcode_display_col_4');
+function TMCEBS_shortcode_clear($atts) {
+  @extract($atts);
+  $vertical_space = '';
+  if (isset($lines)) {
+    for ($i = 0; $i < $lines; $i++) {
+      $vertical_space .= '<br>';
+    }
+  }
+  $tempStr = '<div class="clearfix">'.$vertical_space.'</div>';
+  return $tempStr;
+}
+add_shortcode('clear', 'TMCEBS_shortcode_clear');
+
 ?>

@@ -1,9 +1,11 @@
 (function() {
+  console.log('trap A');
   tinymce.PluginManager.add('TMCEBS_shortcodes', function(editor, url) {
     // Add a button that opens a window and adds a URL
+  console.log('trap B');
     editor.addButton('TMCEBS_URL_shortcode_key', {
       //text: 'Button',
-      icon: 'dashicons icon-link',
+      icon: 'dashicons icon-plus',
       //icon: false,
       onclick: function() {
         // Open window
@@ -164,7 +166,7 @@
     // Add a button that opens a window
     editor.addButton('TMCEBS_clearer', {
       //text: 'Button',
-      icon: 'dashicons icon-layout4',
+      icon: 'dashicons icon-menu',
       //icon: false,
       onclick: function() {
         // Open window
@@ -172,12 +174,17 @@
           title: 'Clear floats',
           body: [{
             type: 'textbox',
-            name: 'vertical-lines',
+            name: 'verticalLines',
             label: 'Vertical lines',
           }],
           onsubmit: function(e) {
             // Insert content when the window form is submitted
-            editor.insertContent('[clear vertical-lines=' + e.data.vertical-lines + ']');
+            if (e.data.verticalLines) {
+              lines = ' lines=' + e.data.verticalLines;
+            } else {
+              lines = '';
+            }
+            editor.insertContent('[clear' + lines + ']');
           }
         });
       }
