@@ -74,17 +74,17 @@ function TMCEBS_shortcode_display_row($atts, $content = null) {
 }
 add_shortcode('row', 'TMCEBS_shortcode_display_row');
 function TMCEBS_shortcode_display_col_6($atts, $content = null) {
-  $tempStr = '<div class="col-md-6">'.do_shortcode($content).'</div>';
+  $tempStr = '<div class="col-md-6"><div class="padder">'.do_shortcode($content).'</div></div>';
   return $tempStr;
 }
 add_shortcode('col-6', 'TMCEBS_shortcode_display_col_6');
 function TMCEBS_shortcode_display_col_8($atts, $content = null) {
-  $tempStr = '<div class="col-md-8">'.do_shortcode($content).'</div>';
+  $tempStr = '<div class="col-md-8"><div class="padder">'.do_shortcode($content).'</div></div>';
   return $tempStr;
 }
 add_shortcode('col-8', 'TMCEBS_shortcode_display_col_8');
 function TMCEBS_shortcode_display_col_4($atts, $content = null) {
-  $tempStr = '<div class="col-md-4">'.do_shortcode($content).'</div>';
+  $tempStr = '<div class="col-md-4"><div class="padder">'.do_shortcode($content).'</div></div>';
   return $tempStr;
 }
 add_shortcode('col-4', 'TMCEBS_shortcode_display_col_4');
