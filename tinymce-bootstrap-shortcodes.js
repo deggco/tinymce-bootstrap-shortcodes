@@ -36,90 +36,10 @@
       onclick: function() {
         // Open window
         editor.windowManager.open({
-          title: 'Shortcode 1:1',
-          body: [{
-            type: 'textbox',
-            name: 'col1',
-            label: 'Column 1',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }, {
-            type: 'textbox',
-            name: 'col2',
-            label: 'Column 2',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }],
-          onsubmit: function(e) {
-            // Insert content when the window form is submitted
-            editor.insertContent('[row][col-6]' + e.data.col1 + '[/col-6][col-6]' + e.data.col2 + '[/col-6][/row]');
-          }
-        });
-      }
-    });
-    //col-8/col-4
-    // Add a button that opens a window
-    editor.addButton('TMCEBS_col_84_shortcode_key', {
-      //text: 'Button',
-      icon: 'dashicons icon-layout2',
-      //icon: false,
-      onclick: function() {
-        // Open window
-        editor.windowManager.open({
-          title: 'Shortcode 2:1',
-          body: [{
-            type: 'textbox',
-            name: 'col1',
-            label: 'Column 1',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }, {
-            type: 'textbox',
-            name: 'col2',
-            label: 'Column 2',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }],
-          onsubmit: function(e) {
-            // Insert content when the window form is submitted
-            editor.insertContent('[row][col-8]' + e.data.col1 + '[/col-8][col-4]' + e.data.col2 + '[/col-4][/row]');
-          }
-        });
-      }
-    });
-    //col-4/col-8
-    // Add a button that opens a window
-    editor.addButton('TMCEBS_col_48_shortcode_key', {
-      //text: 'Button',
-      icon: 'dashicons icon-layout',
-      //icon: false,
-      onclick: function() {
-        // Open window
-        editor.windowManager.open({
-          title: 'Shortcode 1:2',
-          body: [{
-            type: 'textbox',
-            name: 'col1',
-            label: 'Column 1',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }, {
-            type: 'textbox',
-            name: 'col2',
-            label: 'Column 2',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }],
-          onsubmit: function(e) {
-            // Insert content when the window form is submitted
-            editor.insertContent('[row][col-4]' + e.data.col1 + '[/col-4][col-8]' + e.data.col2 + '[/col-8][/row]');
-          }
+          title: 'Two-Column Layout',
+          url: '../../app/plugins/tinymce-bootstrap-shortcodes/insert.php',
+          width: 500,
+          height: 400
         });
       }
     });
