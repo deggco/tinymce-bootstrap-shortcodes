@@ -32,8 +32,9 @@ function enqueue_jquery_ui() {
 add_action('wp_enqueue_scripts','enqueue_jquery_ui');
 
 if(!isset($_GET["cols"]))
-  if(!in_array($_GET["cols"],[2,3,4]))
-    die();
+  die();
+else if(!in_array($_GET["cols"],[2,3,4]))
+  die();
 else
   $columnCount = (int) $_GET["cols"];
 
@@ -45,6 +46,42 @@ else
 <body>
 
 <form onSubmit="processForm(this);">
+  <label for="col1-text">Column 1:</label>
+  <textarea name="col1-text"></textarea>
+
+  <label for="col2-text">Column 2:</label>
+  <textarea name="col2-text"></textarea>
+  
+  <?php if($columnCount > 2) { ?>
+
+  <label for="col3-text">Column 3:</label>
+  <textarea name="col3-text"></textarea>
+
+  <?php if($columnCount > 3) { ?>
+
+  <label for="col3-text">Column 4:</label>
+  <textarea name="col3-text"></textarea>
+
+  <?php }} ?>
+
+  <label for="col-widths">Column Widths:</label>
+  <input type="hidden" name="col1-width" />
+  <input type="hidden" name="col2-width" />
+  <?php if($columnCount > 2) { ?>
+  <input type="hidden" name="col3-width" />
+  <?php if($columnCount > 3) { ?>
+  <input type="hidden" name="col4-width" />
+  <?php }} ?>
+  
+  <div id="col-width-slider"></div>
+  <div id="col-width-labels">
+    Column 1: <span class="col-1-width"></span>
+    , Column 2: <span class="col-2-width"></span>
+  <?php if($columnCount > 2) { ?>
+    , Column 3: <span class="col-3-width"></span>
+  <?php if($columnCount > 3) { ?>
+    , Column 4: <span class="col-4-width"></span>
+  <?php }} ?>
 
 </form>
 
