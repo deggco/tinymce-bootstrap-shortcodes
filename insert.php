@@ -45,7 +45,7 @@ else
 </head>
 <body>
 
-<form onSubmit="processForm(this);">
+<form onSubmit="return processForm(this);">
   <h2>Content</h2>
 
   <label for="col1-text">Column 1:</label>
