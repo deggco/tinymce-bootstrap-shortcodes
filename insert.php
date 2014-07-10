@@ -14,33 +14,39 @@ while(!file_exists($file))
 require_once $file;
 require_once ABSPATH . "wp-load.php";
 
-function equeue_jquery_ui() {
-  wp_enqueue_script('jquery-ui',site_url().'/wp-includes/js/jquery/ui/jquery.ui.core.min.js');
-  wp_enqueue_script('slider-jquery-ui',site_url().'/wp-includes/js/jquery/ui/jquery.ui.slider.min.js');
+function enqueue_jquery_ui() {
+  wp_deregister_script("jquery-ui");
+  wp_register_script("jquery-ui",plugin_dir_url(__FILE__)."js/jquery-ui.min.js",["jquery"]);
+  wp_enqueue_script("jquery-ui");
+
+  wp_register_style("jquery-ui",plugin_dir_url(__FILE__)."css/jquery-ui.min.css");
+  wp_enqueue_style("jquery-ui");
+
+  wp_register_style("tinymce-bootstrap-shortcode-insert",plugin_dir_url(__FILE__)."css/insert.css");
+  wp_enqueue_style("tinymce-bootstrap-shortcode-insert");
+
+  wp_register_script("tinymce-bootstrap-shortcode-insert",plugin_dir_url(__FILE__)."js/insert.js");
+  wp_enqueue_script("tinymce-bootstrap-shortcode-insert");
 }
 
-add_action('wp_enqueue_scripts','equeue_jquery_ui');
+add_action('wp_enqueue_scripts','enqueue_jquery_ui');
+
+if(!isset($_GET["cols"]))
+  if(!in_array($_GET["cols"],[2,3,4]))
+    die();
+else
+  $columnCount = (int) $_GET["cols"];
 
 ?><!DOCTYPE html>
 <head>
-  <?php 
-  
-  wp_head(); ?>
-  <script type="text/javascript">
-
-jQuery(document).ready(function($){
-  $('#slider').css('diplay','none');
-}(jQuery));
-
-function processForm(obj) {
-  
-}
-
-  </script>
+  <script type="text/javascript">columnCount = <?php echo $columnCount; ?>;</script>
+  <?php wp_head(); ?>
 </head>
 <body>
-  <form onsubmit="processForm(this);" />
-    <div id="slider">hello</div>
-  </form>
+
+<form onSubmit="processForm(this);">
+
+</form>
+
 </body>
 </html>
