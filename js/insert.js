@@ -5,6 +5,13 @@ jQuery(document).ready(function(){
     step: 1
   }
 
+  initSlider();
+
+});
+
+function initSlider(prefix) {
+  prefix = typeof prefix == 'undefined' ? '' : prefix+'-' ;
+  console.log("test"+prefix+"test");
   if(columnCount == 2) {
     places = [
       [jQuery("form input[name='col1-width']"),jQuery("#col-width-labels .col-1-width")],
@@ -49,7 +56,7 @@ jQuery(document).ready(function(){
   }
 
   jQuery('#col-width-slider').slider(columnWidthOptions);
-});
+}
 
 function setValues(values,places) {
   for(i=0;i<places.length;i++) {
