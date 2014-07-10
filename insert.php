@@ -64,24 +64,116 @@ else
 
   <?php }} ?>
 
-  <label for="col-widths">Column Widths:</label>
-  <input type="hidden" name="col1-width" />
-  <input type="hidden" name="col2-width" />
-  <?php if($columnCount > 2) { ?>
-  <input type="hidden" name="col3-width" />
-  <?php if($columnCount > 3) { ?>
-  <input type="hidden" name="col4-width" />
-  <?php }} ?>
-  
-  <div id="col-width-slider"></div>
-  <div id="col-width-labels">
-    Column 1: <span class="col-1-width"></span>
-    , Column 2: <span class="col-2-width"></span>
-  <?php if($columnCount > 2) { ?>
-    , Column 3: <span class="col-3-width"></span>
-  <?php if($columnCount > 3) { ?>
-    , Column 4: <span class="col-4-width"></span>
-  <?php }} ?>
+  <label for="responsive-design">Responsive slider sizes: </label>
+  <input type="checkbox" name="responsive-design" id="responsive-design" />
+
+  <div id="nonresponsive-sliders">
+    <label for="col-widths">Column Widths:</label>
+    <input type="hidden" name="col1-width" />
+    <input type="hidden" name="col2-width" />
+    <?php if($columnCount > 2) { ?>
+    <input type="hidden" name="col3-width" />
+    <?php if($columnCount > 3) { ?>
+    <input type="hidden" name="col4-width" />
+    <?php }} ?>
+    
+    <div id="col-width-slider"></div>
+    <div id="col-width-labels">
+      Column 1: <span class="col-1-width"></span>
+      , Column 2: <span class="col-2-width"></span>
+    <?php if($columnCount > 2) { ?>
+      , Column 3: <span class="col-3-width"></span>
+    <?php if($columnCount > 3) { ?>
+      , Column 4: <span class="col-4-width"></span>
+    <?php }} ?>
+    </div>
+  </div>
+
+
+  <div id="responsive-design-sliders">
+    <label for="xs-col-widths">Column Widths:</label>
+    <input type="hidden" name="xs-col1-width" />
+    <input type="hidden" name="xs-col2-width" />
+    <?php if($columnCount > 2) { ?>
+    <input type="hidden" name="xs-col3-width" />
+    <?php if($columnCount > 3) { ?>
+    <input type="hidden" name="xs-col4-width" />
+    <?php }} ?>
+    
+    <div id="xs-col-width-slider"></div>
+    <div id="xs-col-width-labels">
+      Column 1: <span class="xs-col-1-width"></span>
+      , Column 2: <span class="xs-col-2-width"></span>
+    <?php if($columnCount > 2) { ?>
+      , Column 3: <span class="xs-col-3-width"></span>
+    <?php if($columnCount > 3) { ?>
+      , Column 4: <span class="xs-col-4-width"></span>
+    <?php }} ?>
+    </div>
+
+
+    <label for="sm-col-widths">Column Widths:</label>
+    <input type="hidden" name="sm-col1-width" />
+    <input type="hidden" name="sm-col2-width" />
+    <?php if($columnCount > 2) { ?>
+    <input type="hidden" name="sm-col3-width" />
+    <?php if($columnCount > 3) { ?>
+    <input type="hidden" name="sm-col4-width" />
+    <?php }} ?>
+    
+    <div id="sm-col-width-slider"></div>
+    <div id="sm-col-width-labels">
+      Column 1: <span class="sm-col-1-width"></span>
+      , Column 2: <span class="sm-col-2-width"></span>
+    <?php if($columnCount > 2) { ?>
+      , Column 3: <span class="sm-col-3-width"></span>
+    <?php if($columnCount > 3) { ?>
+      , Column 4: <span class="sm-col-4-width"></span>
+    <?php }} ?>
+    </div>
+
+
+    <label for="md-col-widths">Column Widths:</label>
+    <input type="hidden" name="md-col1-width" />
+    <input type="hidden" name="md-col2-width" />
+    <?php if($columnCount > 2) { ?>
+    <input type="hidden" name="md-col3-width" />
+    <?php if($columnCount > 3) { ?>
+    <input type="hidden" name="md-col4-width" />
+    <?php }} ?>
+    
+    <div id="md-col-width-slider"></div>
+    <div id="md-col-width-labels">
+      Column 1: <span class="md-col-1-width"></span>
+      , Column 2: <span class="md-col-2-width"></span>
+    <?php if($columnCount > 2) { ?>
+      , Column 3: <span class="md-col-3-width"></span>
+    <?php if($columnCount > 3) { ?>
+      , Column 4: <span class="md-col-4-width"></span>
+    <?php }} ?>
+    </div>
+
+
+    <label for="lg-col-widths">Column Widths:</label>
+    <input type="hidden" name="lg-col1-width" />
+    <input type="hidden" name="lg-col2-width" />
+    <?php if($columnCount > 2) { ?>
+    <input type="hidden" name="lg-col3-width" />
+    <?php if($columnCount > 3) { ?>
+    <input type="hidden" name="lg-col4-width" />
+    <?php }} ?>
+    
+    <div id="lg-col-width-slider"></div>
+    <div id="lg-col-width-labels">
+      Column 1: <span class="lg-col-1-width"></span>
+      , Column 2: <span class="lg-col-2-width"></span>
+    <?php if($columnCount > 2) { ?>
+      , Column 3: <span class="lg-col-3-width"></span>
+    <?php if($columnCount > 3) { ?>
+      , Column 4: <span class="lg-col-4-width"></span>
+    <?php }} ?>
+    </div>
+  </div>
 
 </form>
 
