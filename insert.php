@@ -46,6 +46,8 @@ else
 <body>
 
 <form onSubmit="processForm(this);">
+  <h2>Content</h2>
+
   <label for="col1-text">Column 1:</label>
   <textarea name="col1-text"></textarea>
 
@@ -63,6 +65,8 @@ else
   <textarea name="col3-text"></textarea>
 
   <?php }} ?>
+
+  <h2>Column Sizes</h2>
 
   <label for="responsive-design">Responsive slider sizes: </label>
   <input type="checkbox" name="responsive-design" id="responsive-design" />
@@ -91,7 +95,7 @@ else
 
 
   <div id="responsive-design-sliders">
-    <label for="xs-col-widths">Column Widths:</label>
+    <label for="xs-col-widths">XS Screens (0-767px):</label>
     <input type="hidden" name="xs-col1-width" />
     <input type="hidden" name="xs-col2-width" />
     <?php if($columnCount > 2) { ?>
@@ -112,7 +116,7 @@ else
     </div>
 
 
-    <label for="sm-col-widths">Column Widths:</label>
+    <label for="sm-col-widths">SM Screens (768-991px):</label>
     <input type="hidden" name="sm-col1-width" />
     <input type="hidden" name="sm-col2-width" />
     <?php if($columnCount > 2) { ?>
@@ -133,7 +137,7 @@ else
     </div>
 
 
-    <label for="md-col-widths">Column Widths:</label>
+    <label for="md-col-widths">MD Screens (992-1199px):</label>
     <input type="hidden" name="md-col1-width" />
     <input type="hidden" name="md-col2-width" />
     <?php if($columnCount > 2) { ?>
@@ -154,7 +158,7 @@ else
     </div>
 
 
-    <label for="lg-col-widths">Column Widths:</label>
+    <label for="lg-col-widths">LG Screens (1200px+):</label>
     <input type="hidden" name="lg-col1-width" />
     <input type="hidden" name="lg-col2-width" />
     <?php if($columnCount > 2) { ?>
@@ -174,6 +178,8 @@ else
     <?php }} ?>
     </div>
   </div>
+
+  <input type="submit" value="Submit" />
 
 </form>
 

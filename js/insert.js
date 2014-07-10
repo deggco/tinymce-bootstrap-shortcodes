@@ -16,6 +16,8 @@ jQuery(document).ready(function(){
     }
   });
 
+  jQuery('#responsive-design').attr('checked',false);
+
 });
 
 function initSlider(prefix) {
