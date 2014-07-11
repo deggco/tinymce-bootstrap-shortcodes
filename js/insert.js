@@ -1,6 +1,8 @@
 jQuery(document).ready(function(){
 
   initSlider();
+  initFullWidthCheckbox('xs');
+  initFullWidthCheckbox('sm');
 
   jQuery('#responsive-design').click(function(obj) {
     if(obj.target.checked) {
@@ -16,7 +18,7 @@ jQuery(document).ready(function(){
     }
   });
 
-  jQuery('#responsive-design').attr('checked',false);
+  jQuery('input[type="checkbox"]').attr('checked',false);
 
 });
 
@@ -91,6 +93,27 @@ function calcValues(values,columnWidthOptions) {
       distance.push(values[i] - values[i-1]);
   }
   return distance
+}
+
+function initFullWidthCheckbox(prefix) {
+  jQuery('input[name="'+prefix+'-full-width"]').click(function(obj) {
+    if(obj.target.checked) {
+      jQuery('#'+prefix+'-col-width-slider').css('display','none');
+      jQuery('#'+prefix+'-col-width-labels').css('display','none');
+      jQuery('input[name="'+prefix+'-col1-width"]').val(12);
+      jQuery('input[name="'+prefix+'-col2-width"]').val(12);
+      if(columnCount > 2) {
+        jQuery('input[name="'+prefix+'-col3-width"]').val(12);
+      }
+      if(columnCount > 3) {
+        jQuery('input[name="'+prefix+'-col4-width"]').val(12);
+      }
+    }else{
+      jQuery('#'+prefix+'-col-width-slider').css('display','block');
+      jQuery('#'+prefix+'-col-width-labels').css('display','block');
+      initSlider(''+prefix+'');
+    }
+  });
 }
 
 function processForm(obj) {
