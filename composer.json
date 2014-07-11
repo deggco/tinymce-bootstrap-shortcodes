@@ -1,22 +1,16 @@
 {
-  "name": "degg/tinymce-bootstrap-shortcodes",
+  "name": "deggco/tinymce-bootstrap-shortcodes",
   "type": "wordpress-plugin",
-  "description": "A plugin to add a custom button and shortcode to TinyMCE in Wordpress 3.9",
-  "homepage": "https://github.com/zero4281/TinyMCE-shortcode-button",
-  "license": "MIT",
+  "description": "TinyMCE Plugin that adds 2-4 column bootstrap layouts with customizable widths (including responsive design)",
+  "homepage": "https://github.com/deggco/tinymce-bootstrap-buttons",
+  "license": "GPLv3",
   "authors": [
     {
-      "name": "Joshua Rising",
-      "email": "zero4281@gmail.com",
-      "homepage": "https://github.com/zero4281/",
+      "name": "Degg Company, LLC",
+      "email": "t@degg.co",
+      "homepage": "https://github.com/deggco/",
       "role": "Developer"
     },
-    {
-      "name": "Travis Scheidegger",
-      "email": "t@degg.co",
-      "homepage": "http://degg.co",
-      "role": "Developer"
-    }
   ],
   "minimum-stability": "dev",
   "require": {
