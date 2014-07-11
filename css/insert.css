@@ -1,0 +1,42 @@
+#responsive-design-sliders {
+  display: none;
+}
+
+.col-width-label {
+  float: left;
+  margin: 5px 20px;
+}
+
+.col-width-label span {
+  font-weight: bold;
+  font-size: larger;
+}
+
+#col-width-labels, #xs-col-width-labels, #sm-col-width-labels, #md-col-width-labels, #lg-col-width-labels {
+  overflow: hidden;
+}
+
+label {
+  font-weight: bold;
+  margin: 10px 0;
+  display: block;
+}
+
+label[for="responsive-design"] {
+  display: inline;
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 6em;
+}
+
+body {
+  margin: 10px;
+}

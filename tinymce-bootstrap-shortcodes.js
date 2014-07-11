@@ -1,14 +1,13 @@
 (function() {
-  console.log('trap A');
   tinymce.PluginManager.add('TMCEBS_shortcodes', function(editor, url) {
-    // Add a button that opens a window and adds a URL
-  console.log('trap B');
+    /**
+     * TMCEBS_URL_shortcode_key
+     *
+     * Bootstrap button generator
+     */
     editor.addButton('TMCEBS_URL_shortcode_key', {
-      //text: 'Button',
       icon: 'dashicons icon-plus',
-      //icon: false,
       onclick: function() {
-        // Open window
         editor.windowManager.open({
           title: 'Bootstrap Button Shortcode',
           body: [{
@@ -23,153 +22,66 @@
           onsubmit: function(e) {
             // Insert content when the window form is submitted
             editor.insertContent('[button title=\'' + e.data.title + '\' url=\'' + e.data.url + '\']');
-            //[button title='title' url='url']
           }
         });
       }
     });
-    // Add a button that opens a window
-    editor.addButton('TMCEBS_col_6_shortcode_key', {
-      //text: 'Button',
-      icon: 'dashicons icon-layout3',
-      //icon: false,
-      onclick: function() {
-        // Open window
-        editor.windowManager.open({
-          title: 'Shortcode 1:1',
-          body: [{
-            type: 'textbox',
-            name: 'col1',
-            label: 'Column 1',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }, {
-            type: 'textbox',
-            name: 'col2',
-            label: 'Column 2',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }],
-          onsubmit: function(e) {
-            // Insert content when the window form is submitted
-            editor.insertContent('[row][col-6]' + e.data.col1 + '[/col-6][col-6]' + e.data.col2 + '[/col-6][/row]');
-          }
-        });
-      }
-    });
-    //col-8/col-4
-    // Add a button that opens a window
-    editor.addButton('TMCEBS_col_84_shortcode_key', {
-      //text: 'Button',
+    /**
+     * TMCEBS_2_col
+     *
+     * Column generator for two-column layouts
+     */
+    editor.addButton('TMCEBS_2_col', {
       icon: 'dashicons icon-layout2',
-      //icon: false,
       onclick: function() {
-        // Open window
         editor.windowManager.open({
-          title: 'Shortcode 2:1',
-          body: [{
-            type: 'textbox',
-            name: 'col1',
-            label: 'Column 1',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }, {
-            type: 'textbox',
-            name: 'col2',
-            label: 'Column 2',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }],
-          onsubmit: function(e) {
-            // Insert content when the window form is submitted
-            editor.insertContent('[row][col-8]' + e.data.col1 + '[/col-8][col-4]' + e.data.col2 + '[/col-4][/row]');
-          }
+          title: 'Two-Column Layout',
+          url: tmcebs.plugin_dir+'insert.php?cols=2',
+          width: 800,
+          height: 600
         });
       }
     });
-    //col-4/col-8
-    // Add a button that opens a window
-    editor.addButton('TMCEBS_col_48_shortcode_key', {
-      //text: 'Button',
-      icon: 'dashicons icon-layout',
-      //icon: false,
+    /**
+     * TMCEBS_3_col
+     *
+     * Column generator for three-column layouts
+     */
+    editor.addButton('TMCEBS_3_col', {
+      icon: 'dashicons icon-layout3',
       onclick: function() {
-        // Open window
         editor.windowManager.open({
-          title: 'Shortcode 1:2',
-          body: [{
-            type: 'textbox',
-            name: 'col1',
-            label: 'Column 1',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }, {
-            type: 'textbox',
-            name: 'col2',
-            label: 'Column 2',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }],
-          onsubmit: function(e) {
-            // Insert content when the window form is submitted
-            editor.insertContent('[row][col-4]' + e.data.col1 + '[/col-4][col-8]' + e.data.col2 + '[/col-8][/row]');
-          }
+          title: 'Three-Column Layout',
+          url: tmcebs.plugin_dir+'insert.php?cols=3',
+          width: 800,
+          height: 600
         });
       }
     });
-    //col-4/col-4/col-4
-    // Add a button that opens a window
-    editor.addButton('TMCEBS_col_444_shortcode_key', {
-      //text: 'Button',
+    /**
+     * TMCEBS_3_col
+     *
+     * Column generator for four-column layouts
+     */
+    editor.addButton('TMCEBS_4_col', {
       icon: 'dashicons icon-layout4',
-      //icon: false,
       onclick: function() {
-        // Open window
         editor.windowManager.open({
-          title: 'Shortcode 1:1:1',
-          body: [{
-            type: 'textbox',
-            name: 'col1',
-            label: 'Column 1',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }, {
-            type: 'textbox',
-            name: 'col2',
-            label: 'Column 2',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }, {
-            type: 'textbox',
-            name: 'col3',
-            label: 'Column 3',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }],
-          onsubmit: function(e) {
-            // Insert content when the window form is submitted
-            editor.insertContent('[row][col-4]' + e.data.col1 + '[/col-4][col-4]' + e.data.col2 + '[/col-4][col-4]' + e.data.col3 + '[/col-4][/row]');
-          }
+          title: 'Four-Column Layout',
+          url: tmcebs.plugin_dir+'/insert.php?cols=4',
+          width: 800,
+          height: 600
         });
       }
     });
-    //col-4/col-4/col-4
-    // Add a button that opens a window
+    /**
+     * TMCEBS_clearer
+     *
+     * <br> tag generator for a given height (in lines)
+     */
     editor.addButton('TMCEBS_clearer', {
-      //text: 'Button',
       icon: 'dashicons icon-menu',
-      //icon: false,
       onclick: function() {
-        // Open window
         editor.windowManager.open({
           title: 'Clear floats',
           body: [{
