@@ -68,12 +68,18 @@ function TMCEBS_display_link($atts) {
   return $tempLink;
 }
 add_shortcode('button', 'TMCEBS_shortcode_display_link');
+
 //function to output shortcode
 function TMCEBS_shortcode_display_row($atts, $content = null) {
   $tempStr = '<div class="row">'.do_shortcode($content).'</div>';
   return $tempStr;
 }
 add_shortcode('row', 'TMCEBS_shortcode_display_row');
+
+/**
+ * BACKWARDS COMPATABILITY for v0.0.1. These functions may be removed later.
+ */
+
 function TMCEBS_shortcode_display_col_6($atts, $content = null) {
   $tempStr = '<div class="col-md-6"><div class="padder">'.do_shortcode($content).'</div></div>';
   return $tempStr;
@@ -89,6 +95,22 @@ function TMCEBS_shortcode_display_col_4($atts, $content = null) {
   return $tempStr;
 }
 add_shortcode('col-4', 'TMCEBS_shortcode_display_col_4');
+
+/**
+ * Dynamic Column shortcode function.
+ *
+ * @atts class: Bootstrap classes to add to the column
+ */
+
+function TMCEBS_shortcode_display_col($atts, $content = null) {
+  extract(shortcode_atts(array(
+    'class' => 'col-md-6'
+  ), $atts, 'bartag' ) );
+
+  return sprintf("<div class=\"%s\">%s</div>",$class, $content);
+}
+add_shortcode('col', 'TMCEBS_shortcode_display_col');
+
 function TMCEBS_shortcode_clear($atts) {
   @extract($atts);
   $vertical_space = '';
