@@ -2,6 +2,10 @@
   display: none;
 }
 
+.ui-slider {
+  clear: both;
+}
+
 .col-width-label {
   float: left;
   margin: 5px 20px;
@@ -20,15 +24,24 @@ label {
   font-weight: bold;
   margin: 10px 0;
   display: block;
+  float: left;
 }
 
-label[for="responsive-design"] {
+label[for="responsive-design"], label[for="xs-full-width"], label[for="sm-full-width"] {
   display: inline;
   margin-right: 10px;
 }
 
+label[for="col-widths"], label[for="xs-col-widths"] {
+  clear: both;
+}
+
 input[type="submit"] {
   margin-top: 20px;
+}
+
+input[type="checkbox"] {
+  margin-top: 10px;
 }
 
 textarea {
@@ -39,4 +52,12 @@ textarea {
 
 body {
   margin: 10px;
+}
+
+#xs-full-width-container, #sm-full-width-container {
+  float: right;
+}
+
+.slider-header {
+  clear: both;
 }
