@@ -57,3 +57,7 @@ body {
 #xs-full-width-container, #sm-full-width-container {
   float: right;
 }
+
+.slider-header {
+  clear: both;
+}
