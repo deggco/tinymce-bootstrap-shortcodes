@@ -61,8 +61,8 @@ else
 
   <?php if($columnCount > 3) { ?>
 
-  <label for="col3-text">Column 4:</label>
-  <textarea name="col3-text"></textarea>
+  <label for="col4-text">Column 4:</label>
+  <textarea name="col4-text"></textarea>
 
   <?php }} ?>
 
