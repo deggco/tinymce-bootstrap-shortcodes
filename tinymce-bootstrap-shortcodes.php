@@ -10,11 +10,13 @@
  * Copy Right: 2014 Joshua Rising, Rogue Valley Software
  */
 
-function TMCEBS_css() {
+function TMCEBS_includes() {
   wp_enqueue_style('TMCEBS_css', plugins_url('/style.css', __FILE__));
+  wp_enqueue_script('TMCEBS_plugin_directory', plugins_url('/variables.js', __FILE__));
+  wp_localize_script('TMCEBS_plugin_directory', 'tmcebs', array("plugin_dir" => plugin_dir_url(__FILE__)));
 }
 
-add_action('admin_enqueue_scripts', 'TMCEBS_css');
+add_action('admin_enqueue_scripts', 'TMCEBS_includes');
 
 add_action( 'admin_head', 'TMCEBS_add_tinymce' );
 
@@ -42,10 +44,9 @@ function TMCEBS_add_tinymce_plugin( $plugin_array ) {
 function TMCEBS_add_tinymce_button( $buttons ) {
 
   array_push( $buttons, 'TMCEBS_URL_shortcode_key' );
-  array_push( $buttons, 'TMCEBS_col_6_shortcode_key' );
-  array_push( $buttons, 'TMCEBS_col_48_shortcode_key' );
-  array_push( $buttons, 'TMCEBS_col_84_shortcode_key' );
-  array_push( $buttons, 'TMCEBS_col_444_shortcode_key' );
+  array_push( $buttons, 'TMCEBS_2_col' );
+  array_push( $buttons, 'TMCEBS_3_col' );
+  array_push( $buttons, 'TMCEBS_4_col' );
   array_push($buttons, 'TMCEBS_clearer');
   // Print all buttons
   //echo '<pre>' . print_r($buttons, true) . '</pre>';
@@ -67,12 +68,18 @@ function TMCEBS_display_link($atts) {
   return $tempLink;
 }
 add_shortcode('button', 'TMCEBS_shortcode_display_link');
+
 //function to output shortcode
 function TMCEBS_shortcode_display_row($atts, $content = null) {
   $tempStr = '<div class="row">'.do_shortcode($content).'</div>';
   return $tempStr;
 }
 add_shortcode('row', 'TMCEBS_shortcode_display_row');
+
+/**
+ * BACKWARDS COMPATABILITY for v0.0.1. These functions may be removed later.
+ */
+
 function TMCEBS_shortcode_display_col_6($atts, $content = null) {
   $tempStr = '<div class="col-md-6"><div class="padder">'.do_shortcode($content).'</div></div>';
   return $tempStr;
@@ -88,6 +95,22 @@ function TMCEBS_shortcode_display_col_4($atts, $content = null) {
   return $tempStr;
 }
 add_shortcode('col-4', 'TMCEBS_shortcode_display_col_4');
+
+/**
+ * Dynamic Column shortcode function.
+ *
+ * @atts class: Bootstrap classes to add to the column
+ */
+
+function TMCEBS_shortcode_display_col($atts, $content = null) {
+  extract(shortcode_atts(array(
+    'class' => 'col-md-6'
+  ), $atts, 'bartag' ) );
+
+  return sprintf("<div class=\"%s\">%s</div>",$class, $content);
+}
+add_shortcode('col', 'TMCEBS_shortcode_display_col');
+
 function TMCEBS_shortcode_clear($atts) {
   @extract($atts);
   $vertical_space = '';
