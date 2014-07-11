@@ -83,12 +83,12 @@ else
     
     <div id="col-width-slider"></div>
     <div id="col-width-labels">
-      Column 1: <span class="col-1-width"></span>
-      , Column 2: <span class="col-2-width"></span>
+      <div class="col-width-label">Column 1: <span class="col-1-width"></span></div>
+      <div class="col-width-label">Column 2: <span class="col-2-width"></span></div>
     <?php if($columnCount > 2) { ?>
-      , Column 3: <span class="col-3-width"></span>
+      <div class="col-width-label">Column 3: <span class="col-3-width"></span></div>
     <?php if($columnCount > 3) { ?>
-      , Column 4: <span class="col-4-width"></span>
+      <div class="col-width-label">Column 4: <span class="col-4-width"></span></div>
     <?php }} ?>
     </div>
   </div>
@@ -106,12 +106,12 @@ else
     
     <div id="xs-col-width-slider"></div>
     <div id="xs-col-width-labels">
-      Column 1: <span class="xs-col-1-width"></span>
-      , Column 2: <span class="xs-col-2-width"></span>
+      <div class="col-width-label">Column 1: <span class="xs-col-1-width"></span></div>
+      <div class="col-width-label">Column 2: <span class="xs-col-2-width"></span></div>
     <?php if($columnCount > 2) { ?>
-      , Column 3: <span class="xs-col-3-width"></span>
+      <div class="col-width-label">Column 3: <span class="xs-col-3-width"></span></div>
     <?php if($columnCount > 3) { ?>
-      , Column 4: <span class="xs-col-4-width"></span>
+      <div class="col-width-label">Column 4: <span class="xs-col-4-width"></span></div>
     <?php }} ?>
     </div>
 
@@ -127,12 +127,12 @@ else
     
     <div id="sm-col-width-slider"></div>
     <div id="sm-col-width-labels">
-      Column 1: <span class="sm-col-1-width"></span>
-      , Column 2: <span class="sm-col-2-width"></span>
+      <div class="col-width-label">Column 1: <span class="sm-col-1-width"></span></div>
+      <div class="col-width-label">Column 2: <span class="sm-col-2-width"></span></div>
     <?php if($columnCount > 2) { ?>
-      , Column 3: <span class="sm-col-3-width"></span>
+      <div class="col-width-label">Column 3: <span class="sm-col-3-width"></span></div>
     <?php if($columnCount > 3) { ?>
-      , Column 4: <span class="sm-col-4-width"></span>
+      <div class="col-width-label">Column 4: <span class="sm-col-4-width"></span></div>
     <?php }} ?>
     </div>
 
@@ -148,12 +148,12 @@ else
     
     <div id="md-col-width-slider"></div>
     <div id="md-col-width-labels">
-      Column 1: <span class="md-col-1-width"></span>
-      , Column 2: <span class="md-col-2-width"></span>
+      <div class="col-width-label">Column 1: <span class="md-col-1-width"></span></div>
+      <div class="col-width-label">Column 2: <span class="md-col-2-width"></span></div>
     <?php if($columnCount > 2) { ?>
-      , Column 3: <span class="md-col-3-width"></span>
+      <div class="col-width-label">Column 3: <span class="md-col-3-width"></span></div>
     <?php if($columnCount > 3) { ?>
-      , Column 4: <span class="md-col-4-width"></span>
+      <div class="col-width-label">Column 4: <span class="md-col-4-width"></span></div>
     <?php }} ?>
     </div>
 
@@ -169,17 +169,17 @@ else
     
     <div id="lg-col-width-slider"></div>
     <div id="lg-col-width-labels">
-      Column 1: <span class="lg-col-1-width"></span>
-      , Column 2: <span class="lg-col-2-width"></span>
+      <div class="col-width-label">Column 1: <span class="lg-col-1-width"></span></div>
+      <div class="col-width-label">Column 2: <span class="lg-col-2-width"></span></div>
     <?php if($columnCount > 2) { ?>
-      , Column 3: <span class="lg-col-3-width"></span>
+      <div class="col-width-label">Column 3: <span class="lg-col-3-width"></span></div>
     <?php if($columnCount > 3) { ?>
-      , Column 4: <span class="lg-col-4-width"></span>
+      <div class="col-width-label">Column 4: <span class="lg-col-4-width"></span></div>
     <?php }} ?>
     </div>
   </div>
 
-  <input type="submit" value="Submit" />
+  <input type="submit" value="Insert Into Post" />
 
 </form>
 
