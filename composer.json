@@ -10,7 +10,7 @@
       "email": "t@degg.co",
       "homepage": "https://github.com/deggco/",
       "role": "Developer"
-    },
+    }
   ],
   "minimum-stability": "dev",
   "require": {
