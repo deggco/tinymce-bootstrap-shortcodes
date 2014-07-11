@@ -179,7 +179,7 @@ function generateShortcode(data) {
           classes += " ";
       }
     }else{
-      classes += "col-xs-"+data["size"][i+1];
+      classes += "col-md-"+data["size"][i+1];
     }
     shortcode += "[col class=\""+classes+"\"]"+data["text"][i+1]+"[/col]";
   }
