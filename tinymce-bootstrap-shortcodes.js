@@ -29,83 +29,47 @@
       }
     });
     // Add a button that opens a window
-    editor.addButton('TMCEBS_col_6_shortcode_key', {
+    editor.addButton('TMCEBS_2_col', {
+      //text: 'Button',
+      icon: 'dashicons icon-layout2',
+      //icon: false,
+      onclick: function() {
+        // Open window
+        editor.windowManager.open({
+          title: 'Two-Column Layout',
+          url: '../../app/plugins/tinymce-bootstrap-shortcodes/insert.php?cols=2',
+          width: 800,
+          height: 600
+        });
+      }
+    });
+    // Add a button that opens a window
+    editor.addButton('TMCEBS_3_col', {
       //text: 'Button',
       icon: 'dashicons icon-layout3',
       //icon: false,
       onclick: function() {
         // Open window
         editor.windowManager.open({
-          title: 'Two-Column Layout',
-          url: '../../app/plugins/tinymce-bootstrap-shortcodes/insert.php',
-          width: 500,
-          height: 400
+          title: 'Three-Column Layout',
+          url: '../../app/plugins/tinymce-bootstrap-shortcodes/insert.php?cols=3',
+          width: 800,
+          height: 600
         });
       }
     });
-    //col-4/col-4/col-4
     // Add a button that opens a window
-    editor.addButton('TMCEBS_col_444_shortcode_key', {
+    editor.addButton('TMCEBS_4_col', {
       //text: 'Button',
       icon: 'dashicons icon-layout4',
       //icon: false,
       onclick: function() {
         // Open window
         editor.windowManager.open({
-          title: 'Shortcode 1:1:1',
-          body: [{
-            type: 'textbox',
-            name: 'col1',
-            label: 'Column 1',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }, {
-            type: 'textbox',
-            name: 'col2',
-            label: 'Column 2',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }, {
-            type: 'textbox',
-            name: 'col3',
-            label: 'Column 3',
-            multiline: true,
-            minWidth: 300,
-            minHeight: 100
-          }],
-          onsubmit: function(e) {
-            // Insert content when the window form is submitted
-            editor.insertContent('[row][col-4]' + e.data.col1 + '[/col-4][col-4]' + e.data.col2 + '[/col-4][col-4]' + e.data.col3 + '[/col-4][/row]');
-          }
-        });
-      }
-    });
-    //col-4/col-4/col-4
-    // Add a button that opens a window
-    editor.addButton('TMCEBS_clearer', {
-      //text: 'Button',
-      icon: 'dashicons icon-menu',
-      //icon: false,
-      onclick: function() {
-        // Open window
-        editor.windowManager.open({
-          title: 'Clear floats',
-          body: [{
-            type: 'textbox',
-            name: 'verticalLines',
-            label: 'Vertical lines',
-          }],
-          onsubmit: function(e) {
-            // Insert content when the window form is submitted
-            if (e.data.verticalLines) {
-              lines = ' lines=' + e.data.verticalLines;
-            } else {
-              lines = '';
-            }
-            editor.insertContent('[clear' + lines + ']');
-          }
+          title: 'Four-Column Layout',
+          url: '../../app/plugins/tinymce-bootstrap-shortcodes/insert.php?cols=4',
+          width: 800,
+          height: 600
         });
       }
     });
