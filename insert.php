@@ -72,7 +72,9 @@ else
   <input type="checkbox" name="responsive-design" id="responsive-design" />
 
   <div id="nonresponsive-sliders">
-    <label for="col-widths">Column Widths:</label>
+    <div class="slider-header">
+      <label for="col-widths">Column Widths:</label>
+    </div>
     <input type="hidden" name="col1-width" />
     <input type="hidden" name="col2-width" />
     <?php if($columnCount > 2) { ?>
@@ -95,11 +97,13 @@ else
 
 
   <div id="responsive-design-sliders">
-    <label for="xs-col-widths">XS Screens (0-767px):</label>
-    <div id="xs-full-width-container">
-      <label for="xs-full-width">Full Width Columns: </label>
-      <input type="checkbox" name="xs-full-width" />
-    </div>
+    <div class="slider-header">
+      <label for="xs-col-widths">XS Screens (0-767px):</label>
+      <div id="xs-full-width-container">
+        <label for="xs-full-width">Full Width Columns: </label>
+        <input type="checkbox" name="xs-full-width" />
+      </div>
+    </div
     <input type="hidden" name="xs-col1-width" />
     <input type="hidden" name="xs-col2-width" />
     <?php if($columnCount > 2) { ?>
@@ -120,10 +124,12 @@ else
     </div>
 
 
-    <label for="sm-col-widths">SM Screens (768-991px):</label>
-    <div id="xs-full-width-container">
-      <label for="xs-full-width">Full Width Columns: </label>
-      <input type="checkbox" name="xs-full-width" />
+    <div class="slider-header">
+      <label for="sm-col-widths">SM Screens (768-991px):</label>
+      <div id="sm-full-width-container">
+        <label for="sm-full-width">Full Width Columns: </label>
+        <input type="checkbox" name="sm-full-width" />
+      </div>
     </div>
     <input type="hidden" name="sm-col1-width" />
     <input type="hidden" name="sm-col2-width" />
@@ -145,7 +151,9 @@ else
     </div>
 
 
-    <label for="md-col-widths">MD Screens (992-1199px):</label>
+    <div class="slider-header">
+      <label for="md-col-widths">MD Screens (992-1199px):</label>
+    </div>
     <input type="hidden" name="md-col1-width" />
     <input type="hidden" name="md-col2-width" />
     <?php if($columnCount > 2) { ?>
@@ -166,7 +174,9 @@ else
     </div>
 
 
-    <label for="lg-col-widths">LG Screens (1200px+):</label>
+    <div class="slider-header">
+      <label for="lg-col-widths">LG Screens (1200px+):</label>
+    </div>
     <input type="hidden" name="lg-col1-width" />
     <input type="hidden" name="lg-col2-width" />
     <?php if($columnCount > 2) { ?>
