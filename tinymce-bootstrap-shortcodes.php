@@ -10,11 +10,13 @@
  * Copy Right: 2014 Joshua Rising, Rogue Valley Software
  */
 
-function TMCEBS_css() {
+function TMCEBS_includes() {
   wp_enqueue_style('TMCEBS_css', plugins_url('/style.css', __FILE__));
+  wp_enqueue_script('TMCEBS_plugin_directory', plugins_url('/variables.js', __FILE__));
+  wp_localize_script('TMCEBS_plugin_directory', 'tmcebs', array("plugin_dir" => plugin_dir_url(__FILE__)));
 }
 
-add_action('admin_enqueue_scripts', 'TMCEBS_css');
+add_action('admin_enqueue_scripts', 'TMCEBS_includes');
 
 add_action( 'admin_head', 'TMCEBS_add_tinymce' );
 
