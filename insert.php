@@ -14,6 +14,14 @@ while(!file_exists($file))
 require_once $file;
 require_once ABSPATH . "wp-load.php";
 
+function remove_enqueued_styles() {
+  global $wp_styles;
+  foreach($wp_styles->queue as $handle) {
+    $wp_styles->dequeue($handle);
+  }
+}
+add_action('wp_enqueue_scripts', 'remove_enqueued_styles',100);
+
 function enqueue_jquery_ui() {
   wp_deregister_script("jquery-ui");
   wp_register_script("jquery-ui",plugin_dir_url(__FILE__)."js/jquery-ui.min.js",["jquery"]);
@@ -28,8 +36,7 @@ function enqueue_jquery_ui() {
   wp_register_script("tinymce-bootstrap-shortcode-insert",plugin_dir_url(__FILE__)."js/insert.js");
   wp_enqueue_script("tinymce-bootstrap-shortcode-insert");
 }
-
-add_action('wp_enqueue_scripts','enqueue_jquery_ui');
+add_action('wp_enqueue_scripts', 'enqueue_jquery_ui',101);
 
 if(!isset($_GET["cols"]))
   die();
