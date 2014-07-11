@@ -1,13 +1,12 @@
 <?php
 /**
  * Plugin Name: TinyMCE Bootstrap Shortcodes
- * Description: A plugin to add a custom button and shortcode to TinyMCE
- * Plugin URI:  https://github.com/zero4281/tinymce-bootsrap-shortcodes
- * Version:     0.0.1
- * Author:      Joshua Rising
- * Author URI:  https://github.com/zero4281/
+ * Description: TinyMCE Plugin that adds 2-4 column bootstrap layouts with customizable widths (including responsive design) 
+ * Plugin URI:  https://github.com/deggco/tinymce-bootsrap-shortcodes
+ * Version:     1.0.0
+ * Author:      Degg Company, LLC
+ * Author URI:  https://github.com/deggco/
  * License:     GPL3
- * Copy Right: 2014 Joshua Rising, Rogue Valley Software
  */
 
 function TMCEBS_includes() {
