@@ -103,7 +103,7 @@ else
         <label for="xs-full-width">Full Width Columns: </label>
         <input type="checkbox" name="xs-full-width" />
       </div>
-    </div
+    </div>
     <input type="hidden" name="xs-col1-width" />
     <input type="hidden" name="xs-col2-width" />
     <?php if($columnCount > 2) { ?>
