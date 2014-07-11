@@ -11,7 +11,7 @@ Features
  * 2-4 column layouts
  * Column layout generator with width sliders
  * Responsive design for Bootstrap's xs, sm, md, and lg screen sizes
- * Line break (<br>) generator button
+ * Line break and clearfix generator button
 
 Notes
 -----
