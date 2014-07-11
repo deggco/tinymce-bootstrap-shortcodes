@@ -37,7 +37,7 @@
         // Open window
         editor.windowManager.open({
           title: 'Two-Column Layout',
-          url: '../../app/plugins/tinymce-bootstrap-shortcodes/insert.php?cols=2',
+          url: tmcebs.plugin_dir+'insert.php?cols=2',
           width: 800,
           height: 600
         });
@@ -52,7 +52,7 @@
         // Open window
         editor.windowManager.open({
           title: 'Three-Column Layout',
-          url: '../../app/plugins/tinymce-bootstrap-shortcodes/insert.php?cols=3',
+          url: tmcebs.plugin_dir+'insert.php?cols=3',
           width: 800,
           height: 600
         });
@@ -67,7 +67,7 @@
         // Open window
         editor.windowManager.open({
           title: 'Four-Column Layout',
-          url: '../../app/plugins/tinymce-bootstrap-shortcodes/insert.php?cols=4',
+          url: tmcebs.plugin_dir+'/insert.php?cols=4',
           width: 800,
           height: 600
         });
