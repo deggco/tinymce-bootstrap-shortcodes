@@ -155,7 +155,8 @@ function processForm(obj) {
     data["size"] = size;
   }
 
-  console.log(generateShortcode(data));
+  top.tinymce.activeEditor.insertContent(generateShortcode(data));
+  top.tinymce.activeEditor.windowManager.close();
 
   return false;
   
