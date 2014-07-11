@@ -73,5 +73,31 @@
         });
       }
     });
+    // Add a button that opens a window
+    editor.addButton('TMCEBS_clearer', {
+      //text: 'Button',
+      icon: 'dashicons icon-menu',
+      //icon: false,
+      onclick: function() {
+        // Open window
+        editor.windowManager.open({
+          title: 'Clear floats',
+          body: [{
+            type: 'textbox',
+            name: 'verticalLines',
+            label: 'Vertical lines',
+          }],
+          onsubmit: function(e) {
+            // Insert content when the window form is submitted
+            if (e.data.verticalLines) {
+              lines = ' lines=' + e.data.verticalLines;
+            } else {
+              lines = '';
+            }
+            editor.insertContent('[clear' + lines + ']');
+          }
+        });
+      }
+    });
   });
 })();
