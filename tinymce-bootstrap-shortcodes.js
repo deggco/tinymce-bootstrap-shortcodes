@@ -1,14 +1,13 @@
 (function() {
-  console.log('trap A');
   tinymce.PluginManager.add('TMCEBS_shortcodes', function(editor, url) {
-    // Add a button that opens a window and adds a URL
-  console.log('trap B');
+    /**
+     * TMCEBS_URL_shortcode_key
+     *
+     * Bootstrap button generator
+     */
     editor.addButton('TMCEBS_URL_shortcode_key', {
-      //text: 'Button',
       icon: 'dashicons icon-plus',
-      //icon: false,
       onclick: function() {
-        // Open window
         editor.windowManager.open({
           title: 'Bootstrap Button Shortcode',
           body: [{
@@ -23,18 +22,18 @@
           onsubmit: function(e) {
             // Insert content when the window form is submitted
             editor.insertContent('[button title=\'' + e.data.title + '\' url=\'' + e.data.url + '\']');
-            //[button title='title' url='url']
           }
         });
       }
     });
-    // Add a button that opens a window
+    /**
+     * TMCEBS_2_col
+     *
+     * Column generator for two-column layouts
+     */
     editor.addButton('TMCEBS_2_col', {
-      //text: 'Button',
       icon: 'dashicons icon-layout2',
-      //icon: false,
       onclick: function() {
-        // Open window
         editor.windowManager.open({
           title: 'Two-Column Layout',
           url: tmcebs.plugin_dir+'insert.php?cols=2',
@@ -43,13 +42,14 @@
         });
       }
     });
-    // Add a button that opens a window
+    /**
+     * TMCEBS_3_col
+     *
+     * Column generator for three-column layouts
+     */
     editor.addButton('TMCEBS_3_col', {
-      //text: 'Button',
       icon: 'dashicons icon-layout3',
-      //icon: false,
       onclick: function() {
-        // Open window
         editor.windowManager.open({
           title: 'Three-Column Layout',
           url: tmcebs.plugin_dir+'insert.php?cols=3',
@@ -58,13 +58,14 @@
         });
       }
     });
-    // Add a button that opens a window
+    /**
+     * TMCEBS_3_col
+     *
+     * Column generator for four-column layouts
+     */
     editor.addButton('TMCEBS_4_col', {
-      //text: 'Button',
       icon: 'dashicons icon-layout4',
-      //icon: false,
       onclick: function() {
-        // Open window
         editor.windowManager.open({
           title: 'Four-Column Layout',
           url: tmcebs.plugin_dir+'/insert.php?cols=4',
@@ -73,13 +74,14 @@
         });
       }
     });
-    // Add a button that opens a window
+    /**
+     * TMCEBS_clearer
+     *
+     * <br> tag generator for a given height (in lines)
+     */
     editor.addButton('TMCEBS_clearer', {
-      //text: 'Button',
       icon: 'dashicons icon-menu',
-      //icon: false,
       onclick: function() {
-        // Open window
         editor.windowManager.open({
           title: 'Clear floats',
           body: [{

@@ -30,3 +30,13 @@ label[for="responsive-design"] {
 input[type="submit"] {
   margin-top: 20px;
 }
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 6em;
+}
+
+body {
+  margin: 10px;
+}
