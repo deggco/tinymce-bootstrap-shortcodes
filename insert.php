@@ -96,6 +96,10 @@ else
 
   <div id="responsive-design-sliders">
     <label for="xs-col-widths">XS Screens (0-767px):</label>
+    <div id="xs-full-width-container">
+      <label for="xs-full-width">Full Width Columns: </label>
+      <input type="checkbox" name="xs-full-width" />
+    </div>
     <input type="hidden" name="xs-col1-width" />
     <input type="hidden" name="xs-col2-width" />
     <?php if($columnCount > 2) { ?>
@@ -117,6 +121,10 @@ else
 
 
     <label for="sm-col-widths">SM Screens (768-991px):</label>
+    <div id="xs-full-width-container">
+      <label for="xs-full-width">Full Width Columns: </label>
+      <input type="checkbox" name="xs-full-width" />
+    </div>
     <input type="hidden" name="sm-col1-width" />
     <input type="hidden" name="sm-col2-width" />
     <?php if($columnCount > 2) { ?>
