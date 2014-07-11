@@ -44,10 +44,9 @@ function TMCEBS_add_tinymce_plugin( $plugin_array ) {
 function TMCEBS_add_tinymce_button( $buttons ) {
 
   array_push( $buttons, 'TMCEBS_URL_shortcode_key' );
-  array_push( $buttons, 'TMCEBS_col_6_shortcode_key' );
-  array_push( $buttons, 'TMCEBS_col_48_shortcode_key' );
-  array_push( $buttons, 'TMCEBS_col_84_shortcode_key' );
-  array_push( $buttons, 'TMCEBS_col_444_shortcode_key' );
+  array_push( $buttons, 'TMCEBS_2_col' );
+  array_push( $buttons, 'TMCEBS_3_col' );
+  array_push( $buttons, 'TMCEBS_4_col' );
   array_push($buttons, 'TMCEBS_clearer');
   // Print all buttons
   //echo '<pre>' . print_r($buttons, true) . '</pre>';
