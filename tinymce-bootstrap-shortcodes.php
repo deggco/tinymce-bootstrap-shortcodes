@@ -121,7 +121,7 @@ function TMCEBS_shortcode_dynamic_col($atts, $content = null) {
     'class' => 'col-md-6'
   ), $atts, 'bartag' ) );
 
-  return sprintf("<div class=\"%s\">%s</div>",$class, $content);
+  return sprintf("<div class=\"%s\">%s</div>",$class, do_shortcode($content));
 }
 add_shortcode('col', 'TMCEBS_shortcode_dynamic_col');
 
