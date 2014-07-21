@@ -3,7 +3,7 @@
  * Plugin Name: TinyMCE Bootstrap Shortcodes
  * Description: TinyMCE Plugin that adds 2-4 column bootstrap layouts with customizable widths (including responsive design) 
  * Plugin URI:  https://github.com/deggco/tinymce-bootsrap-shortcodes
- * Version:     1.1.0
+ * Version:     1.1.1
  * Author:      Degg Company, LLC
  * Author URI:  https://github.com/deggco/
  * License:     GPL3
@@ -77,7 +77,7 @@ function TMCEBS_shortcode_button($atts) {
   $size = (isset($size)) ? $size : 'md';
 	$string = sprintf('<a class="btn btn-%s btn-%s" title="%s" href="%s">%s%s</a>', $type, $size, $title, $url, $icon, $title);
 
-  return $tempLink;
+  return $string;
 }
 add_shortcode('button', 'TMCEBS_shortcode_button');
 
