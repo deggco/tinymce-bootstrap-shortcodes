@@ -3,7 +3,7 @@
  * Plugin Name: TinyMCE Bootstrap Shortcodes
  * Description: TinyMCE Plugin that adds 2-4 column bootstrap layouts with customizable widths (including responsive design) 
  * Plugin URI:  https://github.com/deggco/tinymce-bootsrap-shortcodes
- * Version:     1.1.0
+ * Version:     1.1.1
  * Author:      Degg Company, LLC
  * Author URI:  https://github.com/deggco/
  * License:     GPL3
