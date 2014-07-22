@@ -24,7 +24,7 @@ add_action('wp_enqueue_scripts', 'remove_enqueued_styles',100);
 
 function enqueue_jquery_ui() {
   wp_deregister_script("jquery-ui");
-  wp_register_script("jquery-ui",plugin_dir_url(__FILE__)."js/jquery-ui.min.js",["jquery"]);
+  wp_register_script("jquery-ui",plugin_dir_url(__FILE__)."js/jquery-ui.min.js", array("jquery"));
   wp_enqueue_script("jquery-ui");
 
   wp_register_style("jquery-ui",plugin_dir_url(__FILE__)."css/jquery-ui.min.css");
@@ -40,7 +40,7 @@ add_action('wp_enqueue_scripts', 'enqueue_jquery_ui',101);
 
 if(!isset($_GET["cols"]))
   die();
-else if(!in_array($_GET["cols"],[2,3,4]))
+else if(!in_array($_GET["cols"],array(2,3,4)))
   die();
 else
   $columnCount = (int) $_GET["cols"];
