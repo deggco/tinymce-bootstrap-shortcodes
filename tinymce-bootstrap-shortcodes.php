@@ -143,4 +143,33 @@ function TMCEBS_shortcode_clear($atts) {
 }
 add_shortcode('clear', 'TMCEBS_shortcode_clear');
 
+/**
+ * TMCEBS_shortcode_row()
+ *
+ * Displays a bootstrap row
+ */
+function TMCEBS_shortcode_popover($atts, $content = null) {
+  $defaults = array(
+    'button' => 'true',
+    'placement' => 'right',
+    'title' => '',
+    'trigger' => 'More Info'
+  );
+  extract(shortcode_atts($defaults, $atts));
+  $output = '';
+  if ($button == 'true') {
+    $output .= '<button type="button" class="btn btn-default"';
+  } else {
+    $output .= '<a';
+  }
+  $output .= sprintf(' data-container="body" data-toggle="popover" data-placement="%s" title="%s" data-content="%s">%s', $placement, $title, do_shortcode($content), $trigger);
+  if ($button ==  'true') {
+    $output .= '</button>';
+  } else {
+    $output .= '</a>';
+  }
+  return $output;
+}
+add_shortcode('popover', 'TMCEBS_shortcode_popover');
+
 ?>
