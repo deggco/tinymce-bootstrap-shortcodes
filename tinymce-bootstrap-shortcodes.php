@@ -144,9 +144,10 @@ function TMCEBS_shortcode_clear($atts) {
 add_shortcode('clear', 'TMCEBS_shortcode_clear');
 
 /**
- * TMCEBS_shortcode_row()
+ * TMCEBS_shortcode_popover()
  *
- * Displays a bootstrap row
+ * Displays a bootstrap popover
+ * Popovers must still be initialized
  */
 function TMCEBS_shortcode_popover($atts, $content = null) {
   $defaults = array(
