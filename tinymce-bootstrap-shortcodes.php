@@ -163,7 +163,14 @@ function TMCEBS_shortcode_popover($atts, $content = null) {
   } else {
     $output .= '<a';
   }
-  $output .= sprintf(' data-container="body" data-toggle="popover" data-placement="%s" title="%s" data-content="%s">%s', $placement, $title, do_shortcode($content), $trigger);
+  $t = preg_replace("/^<br>/", "", do_shortcode($content), 1);
+  $t = preg_replace("/^<p><\/p>/", "", $t, 1);
+  $t = preg_replace("/^<\/p>/", "", $t, 1);
+  $t = preg_replace("/^<br \/>/", "", $t, 1);
+  $t = preg_replace('/([^\x99]*)<br>/m', '$1', $t, 1);
+  $t = preg_replace('/([^\x99]*)<br \/>/m', '$1', $t, 1);
+  $t = preg_replace('/([^\x99]*)<p><\/p>/m', '$1', $t, 1);
+  $output .= sprintf(' data-container="body" data-toggle="popover" data-placement="%s" title="%s" data-content="%s">%s', $placement, $title, htmlentities($t), $trigger);
   if ($button ==  'true') {
     $output .= '</button>';
   } else {
