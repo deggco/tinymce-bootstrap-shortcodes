@@ -3,7 +3,7 @@
  * Plugin Name: TinyMCE Bootstrap Shortcodes
  * Description: TinyMCE Plugin that adds 2-4 column bootstrap layouts with customizable widths (including responsive design) 
  * Plugin URI:  https://github.com/deggco/tinymce-bootsrap-shortcodes
- * Version:     1.1.1
+ * Version:     1.1.2
  * Author:      Degg Company, LLC
  * Author URI:  https://github.com/deggco/
  * License:     GPL3
@@ -144,9 +144,10 @@ function TMCEBS_shortcode_clear($atts) {
 add_shortcode('clear', 'TMCEBS_shortcode_clear');
 
 /**
- * TMCEBS_shortcode_row()
+ * TMCEBS_shortcode_popover()
  *
- * Displays a bootstrap row
+ * Displays a bootstrap popover
+ * Popovers must still be initialized
  */
 function TMCEBS_shortcode_popover($atts, $content = null) {
   $defaults = array(
@@ -162,7 +163,14 @@ function TMCEBS_shortcode_popover($atts, $content = null) {
   } else {
     $output .= '<a';
   }
-  $output .= sprintf(' data-container="body" data-toggle="popover" data-placement="%s" title="%s" data-content="%s">%s', $placement, $title, do_shortcode($content), $trigger);
+  $t = preg_replace("/^<br>/", "", do_shortcode($content), 1);
+  $t = preg_replace("/^<p><\/p>/", "", $t, 1);
+  $t = preg_replace("/^<\/p>/", "", $t, 1);
+  $t = preg_replace("/^<br \/>/", "", $t, 1);
+  $t = preg_replace('/([^\x99]*)<br>/m', '$1', $t, 1);
+  $t = preg_replace('/([^\x99]*)<br \/>/m', '$1', $t, 1);
+  $t = preg_replace('/([^\x99]*)<p><\/p>/m', '$1', $t, 1);
+  $output .= sprintf(' data-container="body" data-toggle="popover" data-placement="%s" title="%s" data-content="%s">%s', $placement, $title, htmlentities($t), $trigger);
   if ($button ==  'true') {
     $output .= '</button>';
   } else {
