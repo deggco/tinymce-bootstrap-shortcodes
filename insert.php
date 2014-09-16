@@ -23,17 +23,18 @@ function remove_enqueued_styles() {
 add_action('wp_enqueue_scripts', 'remove_enqueued_styles',100);
 
 function enqueue_jquery_ui() {
+	$base_url = plugins_url(basename(__DIR__));
   wp_deregister_script("jquery-ui");
-  wp_register_script("jquery-ui",plugin_dir_url(__FILE__)."js/jquery-ui.min.js", array("jquery"));
+  wp_register_script("jquery-ui",$base_url."/js/jquery-ui.min.js", array("jquery"));
   wp_enqueue_script("jquery-ui");
 
-  wp_register_style("jquery-ui",plugin_dir_url(__FILE__)."css/jquery-ui.min.css");
+  wp_register_style("jquery-ui",$base_url."/css/jquery-ui.min.css");
   wp_enqueue_style("jquery-ui");
 
-  wp_register_style("tinymce-bootstrap-shortcode-insert",plugin_dir_url(__FILE__)."css/insert.css");
+  wp_register_style("tinymce-bootstrap-shortcode-insert",$base_url."/css/insert.css");
   wp_enqueue_style("tinymce-bootstrap-shortcode-insert");
 
-  wp_register_script("tinymce-bootstrap-shortcode-insert",plugin_dir_url(__FILE__)."js/insert.js");
+  wp_register_script("tinymce-bootstrap-shortcode-insert",$base_url."/js/insert.js");
   wp_enqueue_script("tinymce-bootstrap-shortcode-insert");
 }
 add_action('wp_enqueue_scripts', 'enqueue_jquery_ui',101);
