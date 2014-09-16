@@ -75,11 +75,16 @@ function TMCEBS_shortcode_button($atts) {
     'icon' => '',
     'type' => 'primary',
     'size' => 'md',
-    'target' => ''
+    'target' => '',
+    'class' => 'btn btn-default'
   ),$atts));
   $icon = ($icon ? "<span class='{$icon}'></span> " : "");
   $target = ($target ? " target=\"$target\"" : "");
-	$string = sprintf('<a class="btn btn-%s btn-%s" title="%s" href="%s"%s>%s%s</a>', $type, $size, $title, $url, $target, $icon, $title);
+  if ($atts['type']) {
+    $string = sprintf('<a class="btn btn-%s btn-%s" title="%s" href="%s"%s>%s%s</a>', $type, $size, $title, $url, $target, $icon, $title);
+  } else {
+    $string = sprintf('<a class="%s" title="%s" href="%s" %s>%s%s</a>', $class, $title, $url, $target, $icon, $title);
+  }
 
   return $string;
 }
